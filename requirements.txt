@@ -1,2 +1,6 @@
 requests
+pandas
+openpyxl
+fpdf
+google-generativeai
 python-dotenv
