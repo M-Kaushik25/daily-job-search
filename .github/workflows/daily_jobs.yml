@@ -2,7 +2,9 @@ name: Daily Job Search
 
 on:
   schedule:
+    # Runs at 07:30 UTC daily (13:00 IST)
     - cron: "30 7 * * *"
+  # Allows you to run this manually from the Actions tab for testing
   workflow_dispatch:
 
 jobs:
@@ -29,4 +31,5 @@ jobs:
           EMAIL_SMTP_PASS: ${{ secrets.EMAIL_SMTP_PASS }}
           EMAIL_TO: ${{ secrets.EMAIL_TO }}
           EMAIL_FROM: ${{ secrets.EMAIL_FROM }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python job_search_email.py
